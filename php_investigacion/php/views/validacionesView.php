@@ -7,7 +7,7 @@
 nos permiten validar datos antes de procesarlos. 
 Esto evita errores y posibles inyecciones de código no deseadas.</p>
 
-<hr>
+<div class="divider"></div>
 
 <h3>Ejemplo práctico</h3>
 <p>Introduce tu nombre y edad para comprobar cómo PHP valida la información:</p>
@@ -24,7 +24,7 @@ Esto evita errores y posibles inyecciones de código no deseadas.</p>
     <input type="submit" value="Validar">
 </form>
 
-<hr>
+<div class="divider"></div>
 
 <?php if (!empty($resultado['errores'])): ?>
     <h4>❌ Se han encontrado errores:</h4>
@@ -37,7 +37,7 @@ Esto evita errores y posibles inyecciones de código no deseadas.</p>
     <h4 style="color:green;">✅ <?= htmlspecialchars($resultado['mensaje']); ?></h4>
 <?php endif; ?>
 
-<hr>
+<div class="divider"></div>
 
 <h3>Explicación teórica</h3>
 <ul>

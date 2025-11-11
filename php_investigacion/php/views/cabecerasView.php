@@ -9,7 +9,7 @@ Sirven para indicar cómo debe comportarse el navegador: redirigir, descargar un
 En PHP se envían mediante la función <code>header()</code>.
 </p>
 
-<hr style="border:none; border-top:1px solid #ccc; margin:20px 0;">
+<div class="divider"></div>
 
 <h3>🔹 Ejemplos de cabeceras comunes</h3>
 <ul>
@@ -24,7 +24,7 @@ En PHP se envían mediante la función <code>header()</code>.
 Si se envía una cabecera después del contenido, PHP mostrará un error del tipo <code>headers already sent</code>.
 </p>
 
-<hr style="border:none; border-top:1px solid #ccc; margin:20px 0;">
+<div class="divider"></div>
 
 <h3>🧪 Demostración práctica</h3>
 
@@ -63,7 +63,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 }
 ?>
 
-<hr style="border:none; border-top:1px solid #ccc; margin:20px 0;">
+<div class="divider"></div>
 
 <h3>📘 Resumen</h3>
 <p>

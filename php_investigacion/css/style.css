@@ -25,7 +25,6 @@ header {
   background-color: var(--color-header-bg);
   color: var(--color-header-text);
   text-align: center;
-  padding: 20px;
   font-size: 1.6rem;
   position: relative;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
@@ -280,4 +279,16 @@ code {
   font-size: 0.95rem;
 }
 
+/* ------------------ LOGO HEADER ------------------ */
+.logo-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.logo-header {
+  max-width: 300px;
+  height: auto;
+  margin: 10px 0;
+}
 

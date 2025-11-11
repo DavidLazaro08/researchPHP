@@ -1,30 +1,30 @@
 <?php include __DIR__ . '/layout/header.php'; ?>
 <?php include __DIR__ . '/layout/menu.php'; ?>
 
-<h2>Variables PHP — $_SERVER, $_GET, $_POST, $_REQUEST y $_ENV</h2>
+<h2>Cabeceras HTTP en PHP</h2>
 
-<p>En PHP existen varias <strong>variables superglobales</strong> que permiten intercambiar información entre el cliente y el servidor.
-Estas variables están disponibles en cualquier punto del código, sin necesidad de ser declaradas, 
-y cada una cumple un papel diferente según el tipo de dato que maneja.</p>
+<p>
+Las cabeceras HTTP son mensajes invisibles que el servidor envía al navegador <strong>antes</strong> del contenido de la página.
+Sirven para indicar cómo debe comportarse el navegador: redirigir, descargar un archivo, evitar caché, etc.
+En PHP se envían mediante la función <code>header()</code>.
+</p>
 
-<hr>
+<hr style="border:none; border-top:1px solid #ccc; margin:20px 0;">
 
-<h3>$_SERVER</h3>
-<p><code>$_SERVER</code> contiene información sobre el entorno del servidor: dirección IP, 
-software que ejecuta el servidor o el método de solicitud HTTP utilizado. 
-Es útil para conocer datos técnicos de la ejecución del script.</p>
-
+<h3>🔹 Ejemplos de cabeceras comunes</h3>
 <ul>
-    <li><strong>IP del servidor:</strong> <?= htmlspecialchars($datos['ip']); ?></li>
-    <li><strong>Software:</strong> <?= htmlspecialchars($datos['software']); ?></li>
+    <li><strong>Redirección:</strong> <code>header("Location: destino.php");</code></li>
+    <li><strong>Tipo de contenido:</strong> <code>header("Content-Type: text/plain");</code></li>
+    <li><strong>Descarga forzada:</strong> <code>header("Content-Disposition: attachment; filename='archivo.txt'");</code></li>
+    <li><strong>Evitar caché:</strong> <code>header("Cache-Control: no-cache, must-revalidate");</code></li>
 </ul>
 
-<hr>
+<p>
+⚠️ <em>Importante:</em> las cabeceras deben enviarse <strong>antes de imprimir cualquier texto o etiqueta HTML</strong>.
+Si se envía una cabecera después del contenido, PHP mostrará un error del tipo <code>headers already sent</code>.
+</p>
 
-<h3>$_GET</h3>
-<p><code>$_GET</code> se utiliza para recibir información enviada mediante la URL. 
-Los parámetros que se envían son visibles en la barra de direcciones, 
-por lo que este método se usa normalmente para búsquedas o consultas rápidas.</p>
+<hr style="border:none; border-top:1px solid #ccc; margin:20px 0;">
 
 <form method="get" action="?page=variables">
     <label>Tu nombre:</label>
@@ -83,24 +83,41 @@ Por eso, para fines didácticos, <strong>simulamos variables de entorno</strong>
 para mostrar cómo PHP puede crear y leer información del entorno, junto con algunas variables reales si están disponibles.</p>
 
 <?php
-// Simulamos variables de entorno (demostración práctica)
-putenv("USUARIO_PHP=UsuarioDePHP");
-putenv("RUTA_PROYECTO=C:/xampp/htdocs/php_investigacion");
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    $accion = $_POST['accion'] ?? '';
 
-// Forzamos su lectura tanto desde getenv() como desde $_ENV
-$usuario = getenv('USUARIO_PHP') ?: ($_ENV['USUARIO_PHP'] ?? 'No disponible');
-$ruta = getenv('RUTA_PROYECTO') ?: ($_ENV['RUTA_PROYECTO'] ?? 'No disponible');
+    switch ($accion) {
+        case 'texto':
+            // Cambiamos el tipo de contenido a texto plano
+            header("Content-Type: text/plain");
+            echo "Esto es una respuesta de texto plano enviada con header('Content-Type: text/plain')";
+            exit;
 
-// También probamos a obtener variables reales, por si el entorno las ofrece
-$usuarioReal = getenv('USERNAME') ?: getenv('USER') ?: 'No disponible';
-$path = getenv('PATH') ?: 'No disponible';
+        case 'redirigir':
+            // Redirigimos a otra URL
+            header("Location: https://www.google.com");
+            exit;
+
+        case 'descargar':
+            // Generamos un archivo temporal de ejemplo
+            $archivo = __DIR__ . "/../../uploads/ejemplo.txt";
+            file_put_contents($archivo, "Archivo generado desde PHP para demostrar header('Content-Disposition')");
+
+            header("Content-Type: text/plain");
+            header("Content-Disposition: attachment; filename='ejemplo.txt'");
+            readfile($archivo);
+            exit;
+    }
+}
 ?>
 
-<ul>
-    <li><strong>Usuario simulado (USUARIO_PHP):</strong> <?= htmlspecialchars($usuario); ?></li>
-    <li><strong>Ruta del proyecto:</strong> <?= htmlspecialchars($ruta); ?></li>
-    <li><strong>Usuario real del sistema:</strong> <?= htmlspecialchars($usuarioReal); ?></li>
-    <li><strong>Ruta del sistema (PATH):</strong> <?= substr(htmlspecialchars($path), 0, 80) . '...'; ?></li>
-</ul>
+<hr style="border:none; border-top:1px solid #ccc; margin:20px 0;">
+
+<h3>📘 Resumen</h3>
+<p>
+En este ejemplo hemos visto cómo PHP puede controlar el comportamiento del navegador mediante <code>header()</code>:
+redirigir, definir el tipo de contenido o forzar descargas.
+Esta función es muy potente, pero debe usarse antes de cualquier salida al navegador.
+</p>
 
 <?php include __DIR__ . '/layout/footer.php'; ?>

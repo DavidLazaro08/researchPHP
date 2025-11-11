@@ -43,10 +43,10 @@ por lo que este método se usa normalmente para <strong>búsquedas o consultas r
 Según el manual, este método se usa para <em>peticiones idempotentes</em> (que no modifican el estado del servidor).
 </p>
 
-<form method="get" action="?page=variables" class="demo-buttons">
-    <label>Tu nombre:</label>
-    <input type="text" name="nombre" placeholder="Escribe tu nombre...">
-    <button type="submit">Enviar</button>
+<form method="get" action="?page=variables" class="form-cookie">
+    <label for="nombre">Tu nombre:</label>
+    <input type="text" name="nombre" id="nombre" placeholder="Escribe tu nombre...">
+    <input type="submit" value="Enviar">
 </form>
 
 <?php if (isset($_GET['nombre'])): ?>
@@ -63,10 +63,10 @@ La información se envía en el cuerpo de la solicitud HTTP, por lo que no es vi
 Según el manual, este método se asocia a <em>peticiones que modifican el estado</em> o almacenan datos en el servidor.
 </p>
 
-<form method="post" action="?page=variables" class="demo-buttons">
-    <label>Tu apellido:</label>
-    <input type="text" name="apellido" placeholder="Escribe tu apellido...">
-    <button type="submit">Enviar</button>
+<form method="post" action="?page=variables" class="form-cookie">
+    <label for="apellido">Tu apellido:</label>
+    <input type="text" name="apellido" id="apellido" placeholder="Escribe tu apellido...">
+    <input type="submit" value="Enviar">
 </form>
 
 <?php if (isset($_POST['apellido'])): ?>
@@ -84,10 +84,10 @@ en lugar de <code>$_REQUEST</code>.
 (<a href="https://www.php.net/manual/es/reserved.variables.request.php" target="_blank">Referencia oficial</a>)
 </p>
 
-<form method="post" action="?page=variables" class="demo-buttons">
-    <label>Ciudad:</label>
-    <input type="text" name="ciudad" placeholder="Introduce tu ciudad...">
-    <button type="submit">Enviar</button>
+<form method="post" action="?page=variables" class="form-cookie">
+    <label for="ciudad">Ciudad:</label>
+    <input type="text" name="ciudad" id="ciudad" placeholder="Introduce tu ciudad...">
+    <input type="submit" value="Enviar">
 </form>
 
 <?php if (isset($_REQUEST['ciudad'])): ?>

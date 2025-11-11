@@ -126,6 +126,17 @@ main.shifted {
   cursor: pointer;
   z-index: 1100;
 }
+#close-menu {
+  position: fixed;
+  left: 200px;
+  top: 20px;
+  background: none;
+  border: none;
+  color: white;
+  font-size: 28px;
+  cursor: pointer;
+  z-index: 1100;
+}
 
 /* Fondo semitransparente opcional (opcional si quieres overlay oscuro) */
 .overlay {

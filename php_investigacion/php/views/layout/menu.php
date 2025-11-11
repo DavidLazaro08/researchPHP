@@ -1,6 +1,7 @@
 <aside>
     <nav>
-        <button id="menu-toggle">Menú</button>
+        <h1 id="menu-toggle">Menú</h1>
+        <br><br><br>
         <ul>
             <li><a href="index.php?page=variables">Variables PHP</a></li>
             <li><a href="index.php?page=archivos">Archivos ($_FILES)</a></li>

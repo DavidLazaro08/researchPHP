@@ -26,7 +26,7 @@ Es útil para conocer datos técnicos de la ejecución del script.</p>
 Los parámetros que se envían son visibles en la barra de direcciones, 
 por lo que este método se usa normalmente para búsquedas o consultas rápidas.</p>
 
-<form method="get" action="?page=cabeceras">
+<form method="get" action="?page=variables">
     <label>Tu nombre:</label>
     <input type="text" name="nombre">
     <input type="submit" value="Enviar">
@@ -42,7 +42,7 @@ por lo que este método se usa normalmente para búsquedas o consultas rápidas.
 <p><code>$_POST</code> permite enviar información al servidor sin que aparezca en la URL. 
 Es el método más habitual para procesar formularios con datos personales, contraseñas o información sensible.</p>
 
-<form method="post" action="?page=cabeceras">
+<form method="post" action="?page=variables">
     <label>Tu apellido:</label>
     <input type="text" name="apellido">
     <input type="submit" value="Enviar">
@@ -60,7 +60,7 @@ Es decir, permite acceder a los datos sin importar cómo fueron enviados.
 Aunque resulta práctica, no se recomienda para datos sensibles, 
 porque puede generar confusión sobre el origen real de la información.</p>
 
-<form method="post" action="?page=cabeceras">
+<form method="post" action="?page=variables">
     <label>Ciudad:</label>
     <input type="text" name="ciudad">
     <input type="submit" value="Enviar">
@@ -73,7 +73,7 @@ porque puede generar confusión sobre el origen real de la información.</p>
 <hr>
 
 <h3>$_ENV</h3>
-<p><code>$_ENV</code> cfghg operativo o del servidor, 
+<p><code>$_ENV</code> almacena variables del entorno del sistema operativo o del servidor, 
 como el nombre del usuario del sistema o la ruta de instalación de programas.
 Estas variables no siempre son visibles, ya que depende de la configuración del servidor o de la directiva 
 <code>variables_order</code> del archivo <code>php.ini</code>.</p>

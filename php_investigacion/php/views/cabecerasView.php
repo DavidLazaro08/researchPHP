@@ -28,7 +28,7 @@ Si se envía una cabecera después del contenido, PHP mostrará un error del tip
 
 <h3>🧪 Demostración práctica</h3>
 
-<form method="post" style="margin-bottom:20px;">
+<form method="post" class="demo-buttons">
     <button type="submit" name="accion" value="texto">Mostrar como texto plano</button>
     <button type="submit" name="accion" value="redirigir">Redirigir a Google</button>
     <button type="submit" name="accion" value="descargar">Forzar descarga</button>

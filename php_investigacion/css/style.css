@@ -221,3 +221,63 @@ footer {
     display: block;
   }
 
+/* ------------------ ESTILO BOTONES DEMOSTRACIONES ------------------ */
+.demo-buttons button {
+  background-color: #777BB3;      /* color típico PHP */
+  color: #fff;
+  border: none;
+  padding: 8px 16px;
+  margin: 5px;
+  border-radius: 6px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+.demo-buttons button:hover {
+  background-color: #5b64a1;
+  transform: scale(1.03);
+}
+
+.demo-buttons button:active {
+  background-color: #444a78;
+  transform: scale(0.98);
+}
+
+/* ------------------ TIPOGRAFÍA GENERAL ------------------ */
+html {
+  font-size: 17px; /* antes suele estar entre 14-16, un poquito más legible */
+}
+
+body {
+  font-family: "Segoe UI", Roboto, sans-serif;
+  line-height: 1.6;
+  color: #222;
+}
+
+/* Titulares */
+h1, h2, h3 {
+  color: var(--color-footer-bg);
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+h2 {
+  font-size: 1.6rem;
+}
+
+h3 {
+  font-size: 1.3rem;
+}
+
+/* Texto general */
+p, li {
+  font-size: 1rem;
+}
+
+/* Código */
+code {
+  font-size: 0.95rem;
+}
+
+

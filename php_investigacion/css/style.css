@@ -6,6 +6,12 @@
   padding: 0;
   box-sizing: border-box;
 }
+.divider {
+  height: 2px;
+  background: var(--color-aside-button);
+  margin: 20px 0;
+  border-radius: 1px;
+}
 
 html, body {
   height: 100%;
@@ -22,8 +28,8 @@ body {
 }
 
 header {
-  background-color: #2c3e50;
-  color: white;
+  background-color: var(--color-header-bg);
+  color: var(--color-header-text);
   text-align: center;
   padding: 20px;
   font-size: 1.6rem;
@@ -38,7 +44,7 @@ header {
   top: 0;
   background: none;
   border: none;
-  color: white;
+  color: var(--color-aside-link);
   font-size: 28px;
   cursor: pointer;
   z-index: 1100;        /* debe estar por encima del contenido */
@@ -68,7 +74,7 @@ aside {
   left: 0;
   width: 250px;
   height: 100vh;
-  background-color: #34495e;
+  background-color: var(--color-aside-bg);
   padding: 20px;
   transform: translateX(-250px); /* fuera de la pantalla */
   transition: transform 0.3s ease;
@@ -86,16 +92,16 @@ aside nav ul li {
 
 aside nav ul li a {
   display: block;
-  color: white;
+  color: var(--color-aside-link);
   text-decoration: none;
-  background-color: #3e5871;
+  background-color: var(--color-aside-button);
   padding: 10px;
   border-radius: 6px;
   transition: all 0.2s ease;
 }
 
 aside nav ul li a:hover {
-  background-color: #1abc9c;
+  background-color: var(--color-aside-hover);
 }
 
 /* ------------------ CONTENIDO PRINCIPAL ------------------ */
@@ -121,7 +127,7 @@ main.shifted {
   top: 20px;
   background: none;
   border: none;
-  color: white;
+  color: var(--color-aside-link);
   font-size: 28px;
   cursor: pointer;
   z-index: 1100;
@@ -132,7 +138,7 @@ main.shifted {
   top: 20px;
   background: none;
   border: none;
-  color: white;
+  color: var(--color-aside-link);
   font-size: 28px;
   cursor: pointer;
   z-index: 1100;
@@ -153,7 +159,7 @@ main.shifted {
 
 /* ------------------ CONTENIDO PRINCIPAL ------------------ */
 main h2 {
-  color: #2c3e50;
+  color: var(--color-footer-bg);
   margin-bottom: 10px;
 }
 
@@ -163,17 +169,17 @@ main p, main ul {
 }
 
 code {
-  background-color: #e8e8e8;
+  background-color: var(--color-code-bg);
   padding: 3px 6px;
   border-radius: 4px;
   font-family: Consolas, monospace;
-  color: #c0392b;
+  color: var(--color-code);
 }
 
 /* ------------------ FOOTER ------------------ */
 footer {
-  background-color: #2c3e50;
-  color: white;
+  background-color: var(--color-header-bg);
+  color: var(--color-card-bg);
   text-align: center;
   padding: 15px;
   font-size: 0.9rem;
@@ -220,4 +226,64 @@ footer {
   .overlay.show {
     display: block;
   }
+
+/* ------------------ ESTILO BOTONES DEMOSTRACIONES ------------------ */
+.demo-buttons button {
+  background-color: #777BB3;      /* color típico PHP */
+  color: #fff;
+  border: none;
+  padding: 8px 16px;
+  margin: 5px;
+  border-radius: 6px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+.demo-buttons button:hover {
+  background-color: #5b64a1;
+  transform: scale(1.03);
+}
+
+.demo-buttons button:active {
+  background-color: #444a78;
+  transform: scale(0.98);
+}
+
+/* ------------------ TIPOGRAFÍA GENERAL ------------------ */
+html {
+  font-size: 17px; /* antes suele estar entre 14-16, un poquito más legible */
+}
+
+body {
+  font-family: "Segoe UI", Roboto, sans-serif;
+  line-height: 1.6;
+  color: #222;
+}
+
+/* Titulares */
+h1, h2, h3 {
+  color: var(--color-footer-bg);
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+h2 {
+  font-size: 1.6rem;
+}
+
+h3 {
+  font-size: 1.3rem;
+}
+
+/* Texto general */
+p, li {
+  font-size: 1rem;
+}
+
+/* Código */
+code {
+  font-size: 0.95rem;
+}
+
 

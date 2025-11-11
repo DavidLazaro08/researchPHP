@@ -7,8 +7,11 @@
   --color-header-bg: #2c3e50;
   --color-header-text: #ffffff;
   --color-accent: #1abc9c;
+  --color-code: #c0392b;
+  --color-code-bg: #e8e8e8;
   --color-aside-bg: #34495e;
   --color-aside-link: #ffffff;
+  --color-aside-button: #3e5871;
   --color-aside-hover: #1abc9c;
   --color-footer-bg: #2c3e50;
   --color-footer-text: #ffffff;
@@ -19,13 +22,20 @@
 /* 🌙 Si quieres añadir un modo oscuro, podrías activarlo así:
 @media (prefers-color-scheme: dark) {
   :root {
-    --color-bg: #1e1e1e;
-    --color-text: #f0f0f0;
-    --color-header-bg: #121212;
-    --color-aside-bg: #222;
-    --color-aside-link: #ddd;
-    --color-aside-hover: #1abc9c;
-    --color-footer-bg: #121212;
+    --color-bg: #f5f7fa;
+  --color-text: #2c3e50;
+  --color-header-bg: #2c3e50;
+  --color-header-text: #ffffff;
+  --color-accent: #1abc9c;
+  --color-code: #c0392b;
+  --color-code-bg: #e8e8e8;
+  --color-aside-bg: #34495e;
+  --color-aside-link: #ffffff;
+  --color-aside-hover: #1abc9c;
+  --color-footer-bg: #2c3e50;
+  --color-footer-text: #ffffff;
+  --color-card-bg: #ffffff;
+  --color-border: #dcdfe3;
   }
 }
 */

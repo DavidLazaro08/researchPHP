@@ -10,7 +10,7 @@
 </ul>
 Estas herramientas son útiles para recordar usuarios, preferencias, carritos de compra, o cualquier dato temporal.</p>
 
-<hr>
+<div class="divider"></div>
 
 <h3>Gestión de sesión</h3>
 <p>Este ejercicio permite iniciar y cerrar sesiones. Al iniciar sesión, se guarda el nombre del usuario en <code>$_SESSION</code>.</p>
@@ -26,7 +26,7 @@ Estas herramientas son útiles para recordar usuarios, preferencias, carritos de
 <p>La información guardada en la sesión se muestra aquí. Esto ayuda a ver qué datos se mantienen mientras dure la sesión.</p>
 <pre><?= print_r(SesionModel::obtenerInfo()['sesion'], true) ?></pre>
 
-<hr>
+<div class="divider"></div>
 
 <h3>Gestión de cookies</h3>
 <p>Las cookies permiten almacenar datos en el navegador del usuario. Este ejercicio permite:</p>

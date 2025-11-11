@@ -3,6 +3,7 @@
 ------------------------------------------------------ */
 :root {
   --color-bg: #f5f7fa;
+  --color-divider: #dcdfe3;
   --color-text: #2c3e50;
   --color-header-bg: #2c3e50;
   --color-header-text: #ffffff;
@@ -18,28 +19,23 @@
   --color-card-bg: #ffffff;
   --color-border: #dcdfe3;
 }
-
-/* 🌙 Si quieres añadir un modo oscuro, podrías activarlo así:
 @media (prefers-color-scheme: dark) {
   :root {
-    --color-bg: #f5f7fa;
-  --color-text: #2c3e50;
-  --color-header-bg: #2c3e50;
-  --color-header-text: #ffffff;
-  --color-accent: #1abc9c;
-  --color-code: #c0392b;
-  --color-code-bg: #e8e8e8;
-  --color-aside-bg: #34495e;
-  --color-aside-link: #ffffff;
-  --color-aside-hover: #1abc9c;
-  --color-footer-bg: #2c3e50;
-  --color-footer-text: #ffffff;
-  --color-card-bg: #ffffff;
-  --color-border: #dcdfe3;
+    --color-bg: #1e1e1e;
+    --color-divider: #444444;
+    --color-text: #f0f0f0;
+    --color-header-bg: #121212;
+    --color-header-text: #f0f0f0;
+    --color-accent: #1abc9c;
+    --color-code: #e74c3c;
+    --color-code-bg: #2c2c2c;
+    --color-aside-bg: #222222;
+    --color-aside-link: #f0f0f0;
+    --color-aside-button: #333333;
+    --color-aside-hover: #1abcbc;
+    --color-footer-bg: #121212;
+    --color-footer-text: #f0f0f0;
+    --color-card-bg: #2c2c2c;
+    --color-border: #444444;
   }
 }
-*/
-
-/* -----------------------------------------------------
-   🔧 RESETEO Y BASE
------------------------------------------------------- */

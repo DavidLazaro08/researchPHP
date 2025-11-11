@@ -9,7 +9,7 @@ se usaban para intercambiar información con el usuario,
 aquí nos centramos en aquellas que permiten conocer el entorno del servidor y 
 acceder a variables globales dentro del propio código.</p>
 
-<hr>
+<div class="divider"></div>
 
 <h3>1. $_SERVER (ampliación)</h3>
 <p><code>$_SERVER</code> contiene información sobre la ejecución del script y el entorno del servidor web. 
@@ -78,7 +78,7 @@ echo "<p><strong>Fuera de la función:</strong> " . htmlspecialchars($mensaje) .
 mostrarMensaje();
 ?>
 
-<hr>
+<div class="divider"></div>
 
 <h3>Modificando variables globales con $GLOBALS</h3>
 <p>También podemos usar <code>$GLOBALS</code> para modificar variables definidas fuera de la función.

@@ -6,6 +6,12 @@
   padding: 0;
   box-sizing: border-box;
 }
+.divider {
+  height: 2px;
+  background: var(--color-aside-button);
+  margin: 20px 0;
+  border-radius: 1px;
+}
 
 html, body {
   height: 100%;

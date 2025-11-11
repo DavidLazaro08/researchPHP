@@ -7,7 +7,7 @@
 Estas variables están disponibles en cualquier punto del código, sin necesidad de ser declaradas, 
 y cada una cumple un papel diferente según el tipo de dato que maneja.</p>
 
-<hr>
+<div class="divider"></div>
 
 <h3>$_SERVER</h3>
 <p><code>$_SERVER</code> contiene información sobre el entorno del servidor: dirección IP, 
@@ -19,7 +19,7 @@ Es útil para conocer datos técnicos de la ejecución del script.</p>
     <li><strong>Software:</strong> <?= htmlspecialchars($datos['software']); ?></li>
 </ul>
 
-<hr>
+<div class="divider"></div>
 
 <h3>$_GET</h3>
 <p><code>$_GET</code> se utiliza para recibir información enviada mediante la URL. 
@@ -36,7 +36,8 @@ por lo que este método se usa normalmente para búsquedas o consultas rápidas.
     <p>¡Hola <?= htmlspecialchars($_GET['nombre']); ?>!</p>
 <?php endif; ?>
 
-<hr>
+<div class="divider"></div>
+
 
 <h3>$_POST</h3>
 <p><code>$_POST</code> permite enviar información al servidor sin que aparezca en la URL. 
@@ -52,7 +53,7 @@ Es el método más habitual para procesar formularios con datos personales, cont
     <p>Tu apellido es: <?= htmlspecialchars($_POST['apellido']); ?></p>
 <?php endif; ?>
 
-<hr>
+<div class="divider"></div>
 
 <h3>$_REQUEST</h3>
 <p><code>$_REQUEST</code> combina los valores enviados por <code>$_GET</code>, <code>$_POST</code> y <code>$_COOKIE</code>.
@@ -70,7 +71,7 @@ porque puede generar confusión sobre el origen real de la información.</p>
     <p>Tu ciudad es: <?= htmlspecialchars($_REQUEST['ciudad']); ?></p>
 <?php endif; ?>
 
-<hr>
+<div class="divider"></div>
 
 <h3>$_ENV</h3>
 <p><code>$_ENV</code> almacena variables del entorno del sistema operativo o del servidor, 

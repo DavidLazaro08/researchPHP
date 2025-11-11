@@ -298,3 +298,30 @@ code {
   margin: 10px 0;
 }
 
+/* ------------------ INICIO (PÁGINA PRINCIPAL) ------------------ */
+.inicio {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start; /* en lugar de center */
+  text-align: center;
+  min-height: calc(100vh - 180px); /* más natural */
+  background: var(--color-bg);
+  padding: 40px 20px 60px 20px; /* menos margen superior */
+}
+
+.inicio-contenido {
+  max-width: 900px;
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 70px 60px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+  margin-top: 40px; /* acerca el bloque al header */
+}
+
+/* LOGO MÁS GRANDE */
+.inicio-logo {
+  display: block;
+  max-width: 340px; /* más grande */
+  height: auto;
+  margin: 0 auto 40px auto;
+}

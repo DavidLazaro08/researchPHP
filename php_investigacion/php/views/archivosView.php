@@ -10,7 +10,9 @@ tipo MIME, tamaño, nombre temporal y posibles errores durante la subida.</p>
 <p>En este ejemplo, podrás seleccionar un archivo y subirlo al servidor. 
 El script mostrará sus detalles y lo almacenará en la carpeta <strong>/uploads/</strong>.</p>
 
-<hr>
+<div class="divider"></div>
+
+
 
 <form method="post" enctype="multipart/form-data" action="?page=archivos">
     <label for="archivo">Selecciona un archivo:</label>

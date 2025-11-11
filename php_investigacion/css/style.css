@@ -5,6 +5,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  color: var(--color-text);
 }
 .divider {
   height: 2px;
@@ -12,6 +13,7 @@
   margin: 20px 0;
   border-radius: 1px;
 }
+
 
 html, body {
   height: 100%;
@@ -158,7 +160,7 @@ main.shifted {
 
 /* ------------------ CONTENIDO PRINCIPAL ------------------ */
 main h2 {
-  color: var(--color-footer-bg);
+  color: var(--color-text);
   margin-bottom: 10px;
 }
 
@@ -254,15 +256,24 @@ html {
   font-size: 17px; /* antes suele estar entre 14-16, un poquito más legible */
 }
 
+
+
+
 body {
   font-family: "Segoe UI", Roboto, sans-serif;
   line-height: 1.6;
   color: #222;
+  table {
+    color: var(--color-text);
+    background-color: var(--color-card-bg);
+    
+  }
 }
 
 /* Titulares */
 h1, h2, h3 {
-  color: var(--color-footer-bg);
+  color: var(--color-text);
+
   font-weight: 600;
   margin-bottom: 10px;
 }

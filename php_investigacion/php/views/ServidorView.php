@@ -30,7 +30,7 @@ $infoServer = [
 ?>
 
 <table border="1" cellpadding="6" cellspacing="0" style="border-collapse: collapse;">
-    <tr style="background-color: #f0f0f0;">
+    <tr>
         <th>Índice $_SERVER</th>
         <th>Descripción</th>
         <th>Valor real</th>

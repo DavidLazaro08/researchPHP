@@ -4,14 +4,18 @@
 <h2>📁 Gestión de archivos en PHP — $_FILES</h2>
 
 <p>
-<code>$_FILES</code> es una variable superglobal que contiene información sobre los archivos 
-enviados mediante un formulario HTML. Cada archivo subido incluye datos como el nombre original, 
-tipo MIME, tamaño, nombre temporal y posibles errores durante la subida.
+La variable superglobal <code>$_FILES</code> es un <strong>array asociativo multidimensional</strong> 
+que contiene información sobre los archivos enviados mediante un formulario HTML.  
+Cada campo del formulario genera un subarray con los índices:
+<code>name</code>, <code>type</code>, <code>size</code>, <code>tmp_name</code> y <code>error</code>.
 </p>
 
 <p>
-En este ejemplo podrás seleccionar un archivo y subirlo al servidor. 
-El script mostrará sus detalles y lo almacenará en la carpeta <strong>/uploads/</strong>.
+Para que la subida funcione correctamente, el formulario debe incluir el atributo 
+<code>enctype="multipart/form-data"</code> y el método <code>POST</code>.  
+El archivo se guarda temporalmente en el servidor bajo <code>tmp_name</code>, y se mueve a su destino definitivo 
+usando <code>move_uploaded_file()</code>.  
+(Fuente: <a href="https://www.php.net/manual/es/reserved.variables.files.php" target="_blank">Manual oficial de PHP</a>)
 </p>
 
 <div class="divider"></div>
@@ -33,7 +37,9 @@ El script mostrará sus detalles y lo almacenará en la carpeta <strong>/uploads
             <li><strong>Nombre:</strong> <?= htmlspecialchars($resultado['nombre']); ?></li>
             <li><strong>Tipo MIME:</strong> <?= htmlspecialchars($resultado['tipo']); ?></li>
             <li><strong>Tamaño:</strong> <?= round($resultado['tamano'] / 1024, 2); ?> KB</li>
-            <li><strong>Ruta:</strong> <?= htmlspecialchars($resultado['ruta']); ?></li>
+            <li><strong>Ruta temporal:</strong> <?= htmlspecialchars($resultado['tmp']); ?></li>
+            <li><strong>Error:</strong> <?= htmlspecialchars($resultado['error'] ?? 'Ninguno'); ?></li>
+            <li><strong>Ruta final:</strong> <?= htmlspecialchars($resultado['ruta']); ?></li>
             <li><a href="<?= htmlspecialchars($resultado['ruta']); ?>" target="_blank">📂 Abrir archivo</a></li>
         </ul>
 
@@ -45,5 +51,14 @@ El script mostrará sus detalles y lo almacenará en la carpeta <strong>/uploads
         <?php endif; ?>
     </div>
 <?php endif; ?>
+
+<div class="divider"></div>
+
+<h3>⚙️ Notas importantes</h3>
+<ul>
+    <li>El tamaño máximo permitido depende de las directivas <code>upload_max_filesize</code> y <code>post_max_size</code> en <code>php.ini</code>.</li>
+    <li>Antes de procesar el archivo, se recomienda validar el índice <code>error</code> y comprobar con <code>is_uploaded_file()</code> que proviene de una subida HTTP válida.</li>
+    <li>Usa siempre <code>move_uploaded_file()</code> para guardar el archivo de forma segura en el destino final.</li>
+</ul>
 
 <?php include __DIR__ . '/layout/footer.php'; ?>

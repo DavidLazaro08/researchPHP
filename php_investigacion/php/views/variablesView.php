@@ -4,9 +4,11 @@
 <h2>🧩 Variables PHP — $_SERVER, $_GET, $_POST, $_REQUEST y $_ENV</h2>
 
 <p>
-En PHP existen varias <strong>variables superglobales</strong> que permiten intercambiar información entre el cliente y el servidor.
-Estas variables están disponibles en cualquier punto del código, sin necesidad de ser declaradas, 
-y cada una cumple un papel diferente según el tipo de dato que maneja.
+Las <strong>variables superglobales</strong> en PHP son <em>arrays asociativos predefinidos</em> 
+que permiten intercambiar información entre el cliente, el servidor y el propio entorno del lenguaje.  
+Están disponibles en cualquier ámbito del script sin necesidad de ser declaradas mediante <code>global</code>, 
+y cada una cumple un papel diferente según el tipo de dato que maneja.  
+(Fuente: <a href="https://www.php.net/manual/es/language.variables.superglobals.php" target="_blank">Manual oficial de PHP</a>)
 </p>
 
 <div class="divider"></div>
@@ -14,22 +16,31 @@ y cada una cumple un papel diferente según el tipo de dato que maneja.
 <h3>🌐 $_SERVER</h3>
 <p>
 <code>$_SERVER</code> contiene información sobre el entorno del servidor: dirección IP, 
-software que ejecuta el servidor o el método de solicitud HTTP utilizado. 
-Es útil para conocer datos técnicos de la ejecución del script.
+software que ejecuta el servidor o el método de solicitud HTTP utilizado.  
+Es útil para conocer datos técnicos de la ejecución del script.  
+Los índices disponibles dependen del servidor y de su configuración (por ejemplo, Apache o Nginx).
 </p>
 
 <ul>
     <li><strong>IP del servidor:</strong> <?= htmlspecialchars($datos['ip']); ?></li>
     <li><strong>Software:</strong> <?= htmlspecialchars($datos['software']); ?></li>
+    <li><strong>Método:</strong> <?= htmlspecialchars($_SERVER['REQUEST_METHOD'] ?? 'Desconocido'); ?></li>
+    <li><strong>Script actual:</strong> <?= htmlspecialchars($_SERVER['PHP_SELF'] ?? 'No disponible'); ?></li>
 </ul>
+
+<p class="nota">
+🔎 <em>Según el manual oficial</em>, no todos los servidores proporcionan los mismos valores en <code>$_SERVER</code>, 
+ya que estos no están estandarizados completamente (<a href="https://www.php.net/manual/es/reserved.variables.server.php" target="_blank">ver referencia</a>).
+</p>
 
 <div class="divider"></div>
 
 <h3>📩 $_GET</h3>
 <p>
-<code>$_GET</code> se utiliza para recibir información enviada mediante la URL. 
-Los parámetros que se envían son visibles en la barra de direcciones, 
-por lo que este método se usa normalmente para búsquedas o consultas rápidas.
+<code>$_GET</code> se utiliza para recibir información enviada mediante la URL, 
+tras el signo <code>?</code>. Los parámetros que se envían son visibles en la barra de direcciones, 
+por lo que este método se usa normalmente para <strong>búsquedas o consultas rápidas</strong>.  
+Según el manual, este método se usa para <em>peticiones idempotentes</em> (que no modifican el estado del servidor).
 </p>
 
 <form method="get" action="?page=variables" class="demo-buttons">
@@ -46,8 +57,10 @@ por lo que este método se usa normalmente para búsquedas o consultas rápidas.
 
 <h3>📝 $_POST</h3>
 <p>
-<code>$_POST</code> permite enviar información al servidor sin que aparezca en la URL. 
-Es el método más habitual para procesar formularios con datos personales, contraseñas o información sensible.
+<code>$_POST</code> permite enviar información al servidor sin que aparezca en la URL.  
+Es el método más habitual para procesar formularios con <strong>datos personales, contraseñas o información sensible</strong>.  
+La información se envía en el cuerpo de la solicitud HTTP, por lo que no es visible en la barra de direcciones.  
+Según el manual, este método se asocia a <em>peticiones que modifican el estado</em> o almacenan datos en el servidor.
 </p>
 
 <form method="post" action="?page=variables" class="demo-buttons">
@@ -64,10 +77,11 @@ Es el método más habitual para procesar formularios con datos personales, cont
 
 <h3>🔄 $_REQUEST</h3>
 <p>
-<code>$_REQUEST</code> combina los valores enviados por <code>$_GET</code>, <code>$_POST</code> y <code>$_COOKIE</code>.
-Es decir, permite acceder a los datos sin importar cómo fueron enviados. 
-Aunque resulta práctica, no se recomienda para datos sensibles, 
-porque puede generar confusión sobre el origen real de la información.
+<code>$_REQUEST</code> combina los valores de <code>$_GET</code>, <code>$_POST</code> y <code>$_COOKIE</code>.  
+Su contenido depende de la directiva de configuración <code>request_order</code> o, en su defecto, <code>variables_order</code>.  
+Por motivos de seguridad, el manual de PHP recomienda usar directamente <code>$_GET</code> o <code>$_POST</code> 
+en lugar de <code>$_REQUEST</code>.
+(<a href="https://www.php.net/manual/es/reserved.variables.request.php" target="_blank">Referencia oficial</a>)
 </p>
 
 <form method="post" action="?page=variables" class="demo-buttons">
@@ -84,28 +98,25 @@ porque puede generar confusión sobre el origen real de la información.
 
 <h3>⚙️ $_ENV</h3>
 <p>
-<code>$_ENV</code> almacena variables del entorno del sistema operativo o del servidor, 
-como el nombre del usuario del sistema o la ruta de instalación de programas.
-Estas variables no siempre son visibles, ya que depende de la configuración del servidor o de la directiva 
-<code>variables_order</code> del archivo <code>php.ini</code>.
+<code>$_ENV</code> contiene variables del entorno del sistema operativo o del servidor, 
+como el nombre del usuario del sistema o la ruta de ejecución.  
+Estas variables son útiles para almacenar configuraciones que no deben incluirse directamente en el código fuente.  
+En muchos entornos (como XAMPP o servidores compartidos), pueden aparecer vacías por motivos de seguridad.
 </p>
 
 <p>
-En este entorno de pruebas (Windows + XAMPP), <code>$_ENV</code> puede aparecer vacío por motivos de seguridad.
-Por eso, para fines didácticos, <strong>simulamos variables de entorno</strong> con <code>putenv()</code> 
-para mostrar cómo PHP puede crear y leer información del entorno, junto con algunas variables reales si están disponibles.
+En este entorno de pruebas, simulamos variables de entorno con <code>putenv()</code> 
+para mostrar cómo PHP puede crear y leer información del entorno, junto con algunas variables reales si están disponibles.  
+El orden en que PHP carga estas variables depende de la directiva <code>variables_order</code> del archivo <code>php.ini</code>.  
+(<a href="https://www.php.net/manual/es/reserved.variables.environment.php" target="_blank">Referencia oficial</a>)
 </p>
 
 <?php
-// Simulamos variables de entorno (demostración práctica)
 putenv("USUARIO_PHP=UsuarioDePHP");
 putenv("RUTA_PROYECTO=C:/xampp/htdocs/php_investigacion");
 
-// Forzamos su lectura tanto desde getenv() como desde $_ENV
 $usuario = getenv('USUARIO_PHP') ?: ($_ENV['USUARIO_PHP'] ?? 'No disponible');
 $ruta = getenv('RUTA_PROYECTO') ?: ($_ENV['RUTA_PROYECTO'] ?? 'No disponible');
-
-// También probamos a obtener variables reales, por si el entorno las ofrece
 $usuarioReal = getenv('USERNAME') ?: getenv('USER') ?: 'No disponible';
 $path = getenv('PATH') ?: 'No disponible';
 ?>

@@ -416,3 +416,175 @@ code {
   object-fit: cover;
   border-radius: 6px;
 }
+
+/* --- AJUSTES ESTÉTICOS GENERALES --- */
+main {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+/* Justificación general */
+main p, main li {
+  text-align: justify;
+}
+
+/* Alineación coherente de listas */
+main ul {
+  padding-left: 30px;
+}
+
+/* Contenido más equilibrado */
+main > * {
+  max-width: 950px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* ------------------ TABLAS EN EL CONTENIDO ------------------ */
+main table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 20px 0;
+  background: #fff;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+main th, main td {
+  padding: 12px 16px;           /* más aire entre texto y bordes */
+  text-align: left;
+  border-bottom: 1px solid #e0e0e0;
+  vertical-align: top;
+}
+
+main th {
+  background-color: #f7f8fb;    /* tono suave */
+  font-weight: 600;
+  color: #333;
+}
+
+main td code {
+  background: #f0f0f5;
+  color: #b92c2c;
+  padding: 4px 8px;
+  border-radius: 5px;
+  font-weight: 600;
+}
+
+main tr:last-child td {
+  border-bottom: none;
+}
+
+main tr:hover {
+  background-color: #fafafa;
+  transition: 0.2s ease-in-out;
+}
+
+/* --- Ajustes locales solo para cookies y sesiones --- */
+
+/* Formulario principal de sesión */
+.form-sesion {
+  background: #fff;
+  border-radius: 12px;
+  padding: 25px 30px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  margin: 30px auto;
+  max-width: 650px;
+}
+
+.form-sesion label {
+  font-weight: 600;
+  display: block;
+  margin-bottom: 8px;
+}
+
+.form-sesion input[type="text"] {
+  width: 100%;
+  padding: 8px 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 15px;
+  margin-bottom: 14px;
+}
+
+.form-sesion input[type="submit"],
+.form-sesion button {
+  background-color: #162f42;
+  color: #fff;
+  border: none;
+  padding: 10px 18px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 500;
+  margin-right: 8px;
+  transition: background-color 0.2s ease;
+}
+
+.form-sesion input[type="submit"]:hover,
+.form-sesion button:hover {
+  background-color: #1f4762;
+}
+
+/* Formulario de cookies */
+.cookie-forms {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  margin: 30px auto;
+}
+
+.form-cookie {
+  background: #fff;
+  border-radius: 12px;
+  padding: 25px 30px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  width: 600px;
+  max-width: 100%;
+}
+
+.form-cookie label {
+  font-weight: 600;
+  display: block;
+  margin-bottom: 8px;
+}
+
+.form-cookie input[type="text"] {
+  width: 100%;
+  padding: 8px 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 15px;
+  margin-bottom: 14px;
+}
+
+.form-cookie input[type="submit"] {
+  background-color: #162f42;
+  color: #fff;
+  border: none;
+  padding: 10px 18px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: background-color 0.2s ease;
+}
+
+.form-cookie input[type="submit"]:hover {
+  background-color: #1f4762;
+}
+
+/* --- Estilo visual para bloques de código tipo consola --- */
+.console-demo {
+  background: #f8f9fb;
+  border-left: 5px solid #4a74c9;   /* azul vertical decorativo */
+  color: #222;
+  padding: 14px 18px;
+  border-radius: 8px;
+  font-family: "Consolas", "Courier New", monospace;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  white-space: pre-wrap;
+  overflow-x: auto;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+}

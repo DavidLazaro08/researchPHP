@@ -1,4 +1,5 @@
 <?php
+
 // index.php — router mínimo
 declare(strict_types=1);
 
@@ -7,6 +8,10 @@ $page = $_GET['page'] ?? 'inicio';
 
 // Construye ruta al controlador (p.ej. variables → php/controller/VariablesController.php)
 $controllerFile = __DIR__ . "/php/controller/" . ucfirst($page) . "Controller.php";
+
+if (session_status() === PHP_SESSION_NONE) {
+    session_start();
+}
 
 // Si existe el controlador, lo carga y ejecuta su método mostrar()
 if (is_file($controllerFile)) {

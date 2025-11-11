@@ -180,7 +180,7 @@ code {
 /* ------------------ FOOTER ------------------ */
 footer {
   background-color: var(--color-header-bg);
-  color: var(--color-card-bg);
+  color: #fff;
   text-align: center;
   padding: 15px;
   font-size: 0.9rem;
@@ -587,4 +587,8 @@ main tr:hover {
   white-space: pre-wrap;
   overflow-x: auto;
   box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+}
+
+footer, footer * {
+  color: var(--color-footer-text) !important;
 }

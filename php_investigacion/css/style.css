@@ -8,13 +8,11 @@
   color: var(--color-text);
 }
 
-
-
 html, body {
   height: 100%;
   font-family: "Segoe UI", Roboto, sans-serif;
   background-color: var(--color-bg);
-  color: #333;
+  color: var(--color-text);
 }
 
 /* ------------------ ESTRUCTURA PRINCIPAL ------------------ */
@@ -35,7 +33,7 @@ header {
 
 /* ------------------ BOTÓN HAMBURGUESA ------------------ */
 #menu-toggle {
-  position: relative;   /* relativo al header */
+  position: relative;
   left: 0;
   top: 0;
   background: none;
@@ -43,7 +41,7 @@ header {
   color: var(--color-aside-link);
   font-size: 28px;
   cursor: pointer;
-  z-index: 1100;        /* debe estar por encima del contenido */
+  z-index: 1100;
   margin-right: 20px;
 }
 
@@ -72,7 +70,7 @@ aside {
   height: 100vh;
   background-color: var(--color-aside-bg);
   padding: 20px;
-  transform: translateX(-250px); /* fuera de la pantalla */
+  transform: translateX(-250px);
   transition: transform 0.3s ease;
   z-index: 1000;
 }
@@ -107,13 +105,12 @@ main {
   padding: 80px 20px 20px 20px;
 }
 
-/* Cuando el menú está activo */
 aside.active {
   transform: translateX(0);
 }
 
 main.shifted {
-  margin-left: 250px; /* empuja el contenido */
+  margin-left: 250px;
 }
 
 /* ------------------ BOTÓN HAMBURGUESA ------------------ */
@@ -140,7 +137,7 @@ main.shifted {
   z-index: 1100;
 }
 
-/* Fondo semitransparente opcional (opcional si quieres overlay oscuro) */
+/* Fondo semitransparente opcional */
 .overlay {
   position: fixed;
   inset: 0;
@@ -175,7 +172,7 @@ code {
 /* ------------------ FOOTER ------------------ */
 footer {
   background-color: var(--color-header-bg);
-  color: #fff;
+  color: var(--color-footer-text);
   text-align: center;
   padding: 15px;
   font-size: 0.9rem;
@@ -183,50 +180,49 @@ footer {
 }
 
 /* ------------------ MODO RESPONSIVE ------------------ */
-  #menu-toggle {
-    display: block;
-  }
+#menu-toggle {
+  display: block;
+}
 
-  main {
-    grid-template-columns: 1fr;
-  }
+main {
+  grid-template-columns: 1fr;
+}
 
-  aside {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 250px;
-    height: 100vh;
-    transform: translateX(-100%);
-    border-radius: 0;
-    z-index: 1000;
-  }
+aside {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 250px;
+  height: 100vh;
+  transform: translateX(-100%);
+  border-radius: 0;
+  z-index: 1000;
+}
 
-  aside.active {
-    transform: translateX(0);
-  }
+aside.active {
+  transform: translateX(0);
+}
 
-  main {
-    padding: 80px;
-  }
+main {
+  padding: 80px;
+}
 
-  /* Fondo semitransparente cuando el menú está abierto */
-  .overlay {
-    position: fixed;
-    inset: 0;
-    background: rgba(0,0,0,0.4);
-    display: none;
-    z-index: 900;
-  }
+.overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.4);
+  display: none;
+  z-index: 900;
+}
 
-  .overlay.show {
-    display: block;
-  }
+.overlay.show {
+  display: block;
+}
 
 /* ------------------ ESTILO BOTONES DEMOSTRACIONES ------------------ */
 .demo-buttons button {
-  background-color: #777BB3;      /* color típico PHP */
-  color: #fff;
+  background-color: var(--color-button-demo-bg);
+  color: var(--color-footer-text);
   border: none;
   padding: 8px 16px;
   margin: 5px;
@@ -237,38 +233,33 @@ footer {
 }
 
 .demo-buttons button:hover {
-  background-color: #5b64a1;
+  background-color: var(--color-button-demo-hover);
   transform: scale(1.03);
 }
 
 .demo-buttons button:active {
-  background-color: #444a78;
+  background-color: var(--color-button-demo-active);
   transform: scale(0.98);
 }
 
 /* ------------------ TIPOGRAFÍA GENERAL ------------------ */
 html {
-  font-size: 17px; /* antes suele estar entre 14-16, un poquito más legible */
+  font-size: 17px;
 }
-
-
-
 
 body {
   font-family: "Segoe UI", Roboto, sans-serif;
   line-height: 1.6;
-  color: #222;
+  color: var(--color-text);
   table {
     color: var(--color-text);
     background-color: var(--color-card-bg);
-    
   }
 }
 
 /* Titulares */
 h1, h2, h3 {
   color: var(--color-text);
-
   font-weight: 600;
   margin-bottom: 10px;
 }
@@ -304,30 +295,29 @@ code {
   margin: 10px 0;
 }
 
-/* ------------------ INICIO (PÁGINA PRINCIPAL) ------------------ */
+/* ------------------ INICIO ------------------ */
 .inicio {
   display: flex;
   justify-content: center;
-  align-items: flex-start; /* en lugar de center */
+  align-items: flex-start;
   text-align: center;
-  min-height: calc(100vh - 180px); /* más natural */
+  min-height: calc(100vh - 180px);
   background: var(--color-bg);
-  padding: 40px 20px 60px 20px; /* menos margen superior */
+  padding: 40px 20px 60px 20px;
 }
 
 .inicio-contenido {
   max-width: 900px;
-  background: #ffffff;
+  background: var(--color-card-bg);
   border-radius: 16px;
   padding: 70px 60px;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
-  margin-top: 40px; /* acerca el bloque al header */
+  margin-top: 40px;
 }
 
-/* LOGO MÁS GRANDE */
 .inicio-logo {
   display: block;
-  max-width: 340px; /* más grande */
+  max-width: 340px;
   height: auto;
   margin: 0 auto 40px auto;
 }
@@ -337,7 +327,7 @@ code {
   display: flex;
   flex-direction: column;
   gap: 15px;
-  background: #fff;
+  background: var(--color-card-bg);
   padding: 25px;
   border-radius: 12px;
   box-shadow: 0 4px 10px rgba(0,0,0,0.1);
@@ -345,7 +335,7 @@ code {
 }
 
 .form-subida input[type="file"] {
-  border: 1px solid #ccc;
+  border: 1px solid var(--color-border);
   border-radius: 6px;
   padding: 6px;
   background: #fafafa;
@@ -353,7 +343,7 @@ code {
 
 .form-subida button {
   background-color: var(--color-footer-bg);
-  color: #fff;
+  color: var(--color-footer-text);
   border: none;
   padding: 10px 18px;
   border-radius: 6px;
@@ -372,7 +362,7 @@ code {
   align-items: flex-start;
   gap: 30px;
   margin-top: 20px;
-  background: #fff;
+  background: var(--color-card-bg);
   padding: 25px;
   border-radius: 12px;
   box-shadow: 0 4px 10px rgba(0,0,0,0.08);
@@ -399,10 +389,10 @@ code {
 
 .miniatura {
   text-align: center;
-  border: 1px solid #ccc;
+  border: 1px solid var(--color-border);
   border-radius: 8px;
   padding: 10px;
-  background: #f9f9f9;
+  background: var(--color-miniatura-bg);
 }
 
 .miniatura img {
@@ -416,20 +406,16 @@ code {
 main {
   padding-left: 20%;
   padding-right: 20%;
-
 }
 
-/* Justificación general */
 main p, main li {
   text-align: justify;
 }
 
-/* Alineación coherente de listas */
 main ul {
   padding-left: 30px;
 }
 
-/* Contenido más equilibrado */
 main > * {
   max-width: 1050px;
   margin-left: auto;
@@ -440,29 +426,28 @@ main > * {
 main table {
   width: 100%;
   border-collapse: collapse;
-  
-  background: #fff;
+  background: var(--color-card-bg);
   border-radius: 8px;
   overflow: hidden;
   box-shadow: 0 2px 8px rgba(0,0,0,0.05);
 }
 
 main th, main td {
-  padding: 12px 16px;           /* más aire entre texto y bordes */
+  padding: 12px 16px;
   text-align: left;
-  border-bottom: 1px solid #e0e0e0;
+  border-bottom: 1px solid var(--color-border);
   vertical-align: top;
 }
 
 main th {
-  background-color: #f7f8fb;    /* tono suave */
+  background-color: var(--color-table-th-bg);
   font-weight: 600;
-  color: #333;
+  color: var(--color-text);
 }
 
 main td code {
   background: #f0f0f5;
-  color: #b92c2c;
+  color: var(--color-code);
   padding: 4px 8px;
   border-radius: 5px;
   font-weight: 600;
@@ -473,15 +458,13 @@ main tr:last-child td {
 }
 
 main tr:hover {
-  background-color: #fafafa;
+  background-color: var(--color-table-hover);
   transition: 0.2s ease-in-out;
 }
 
 /* --- Ajustes locales solo para cookies y sesiones --- */
-
-/* Formulario principal de sesión */
 .form-sesion {
-  background: #fff;
+  background: var(--color-card-bg);
   border-radius: 12px;
   padding: 25px 30px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
@@ -498,7 +481,7 @@ main tr:hover {
 .form-sesion input[type="text"] {
   width: 100%;
   padding: 8px 10px;
-  border: 1px solid #ccc;
+  border: 1px solid var(--color-border);
   border-radius: 6px;
   font-size: 15px;
   margin-bottom: 14px;
@@ -507,7 +490,7 @@ main tr:hover {
 .form-sesion input[type="submit"],
 .form-sesion button {
   background-color: #162f42;
-  color: #fff;
+  color: var(--color-footer-text);
   border: none;
   padding: 10px 18px;
   border-radius: 6px;
@@ -519,10 +502,9 @@ main tr:hover {
 
 .form-sesion input[type="submit"]:hover,
 .form-sesion button:hover {
-  background-color: #1f4762;
+  background-color: var(--color-form-submit-hover);
 }
 
-/* Formulario de cookies */
 .cookie-forms {
   display: flex;
   flex-direction: column;
@@ -532,7 +514,7 @@ main tr:hover {
 }
 
 .form-cookie {
-  background: #fff;
+  background: var(--color-card-bg);
   border-radius: 12px;
   padding: 25px 30px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
@@ -549,7 +531,7 @@ main tr:hover {
 .form-cookie input[type="text"] {
   width: 100%;
   padding: 8px 10px;
-  border: 1px solid #ccc;
+  border: 1px solid var(--color-border);
   border-radius: 6px;
   font-size: 15px;
   margin-bottom: 14px;
@@ -557,7 +539,7 @@ main tr:hover {
 
 .form-cookie input[type="submit"] {
   background-color: #162f42;
-  color: #fff;
+  color: var(--color-footer-text);
   border: none;
   padding: 10px 18px;
   border-radius: 6px;
@@ -567,14 +549,13 @@ main tr:hover {
 }
 
 .form-cookie input[type="submit"]:hover {
-  background-color: #1f4762;
+  background-color: var(--color-form-submit-hover);
 }
 
-/* --- Estilo visual para bloques de código tipo consola --- */
 .console-demo {
-  background: #f8f9fb;
-  border-left: 5px solid #4a74c9;   /* azul vertical decorativo */
-  color: #222;
+  background: var(--color-miniatura-bg);
+  border-left: 5px solid var(--color-console-border);
+  color: var(--color-text);
   padding: 14px 18px;
   border-radius: 8px;
   font-family: "Consolas", "Courier New", monospace;
@@ -588,7 +569,6 @@ main tr:hover {
 footer, footer * {
   color: var(--color-footer-text) !important;
 }
-
 
 .divider {
   height: 2px;

@@ -576,3 +576,25 @@ footer, footer * {
   margin: 20px 20%;
   border-radius: 1px;
 }
+
+
+#toggle-theme {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background-color: var(--color-header-bg);
+  color: var(--color-header-text);
+  border: none;
+  padding: 8px 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  z-index: 1200;
+  font-weight: 600;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+#toggle-theme:hover {
+  background-color: var(--color-aside-hover);
+  color: var(--color-aside-link);
+}
+

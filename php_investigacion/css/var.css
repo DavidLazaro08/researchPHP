@@ -27,7 +27,7 @@
   --color-miniatura-bg: #f9f9f9;
 }
 
-@media (prefers-color-scheme: dark) {
+/*@media (prefers-color-scheme: dark) {
   :root {
     --color-bg: #1e1e1e;
     --color-divider: #444444;
@@ -45,8 +45,6 @@
     --color-footer-text: #f0f0f0;
     --color-card-bg: #2c2c2c;
     --color-border: #444444;
-
-    /* Nuevas variables dark */
     --color-table-th-bg: #2a2a2a;
     --color-table-hover: #333333;
     --color-button-demo-bg: #555599;
@@ -56,4 +54,33 @@
     --color-console-border: #1a88b8;
     --color-miniatura-bg: #2a2a2a;
   }
+}*/
+
+html.dark-mode {
+    --color-bg: #1e1e1e;
+    --color-divider: #444444;
+    --color-text: #f0f0f0;
+    --color-header-bg: #121212;
+    --color-header-text: #f0f0f0;
+    --color-accent: #1abc9c;
+    --color-code: #e74c3c;
+    --color-code-bg: #2c2c2c;
+    --color-aside-bg: #222222;
+    --color-aside-link: #f0f0f0;
+    --color-aside-button: #333333;
+    --color-aside-hover: #1abcbc;
+    --color-footer-bg: #121212;
+    --color-footer-text: #f0f0f0;
+    --color-card-bg: #2c2c2c;
+    --color-border: #444444;
+
+    --color-table-th-bg: #2a2a2a;
+    --color-table-hover: #333333;
+    --color-button-demo-bg: #555599;
+    --color-button-demo-hover: #444477;
+    --color-button-demo-active: #222244;
+    --color-form-submit-hover: #1f4762;
+    --color-console-border: #1a88b8;
+    --color-miniatura-bg: #2a2a2a;
 }
+

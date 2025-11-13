@@ -9,6 +9,8 @@
 <body>
     <header>
         <button id="menu-toggle">☰</button>
+        <button id="toggle-theme">🌙 Modo Oscuro</button>
+
         <div class="logo-container">
             <img src="assets/img/logo_php_manual.png" alt="Manual Interactivo PHP" class="logo-header">
         </div>

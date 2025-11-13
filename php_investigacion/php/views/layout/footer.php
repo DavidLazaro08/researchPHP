@@ -31,6 +31,38 @@ overlay.addEventListener('click', () => {
   toggle.style.left = '20px';
 });
 
+// Elemento del botón
+const toggleButton = document.getElementById("toggle-theme");
+
+// Función para activar/desactivar modo oscuro
+function setTheme(dark) {
+  if(dark) {
+    document.documentElement.classList.add("dark-mode");
+    toggleButton.textContent = "☀️ Modo Claro";
+  } else {
+    document.documentElement.classList.remove("dark-mode");
+    toggleButton.textContent = "🌙 Modo Oscuro";
+  }
+  // Guardar en localStorage
+  localStorage.setItem("darkMode", dark);
+}
+
+// Revisar si el usuario ya tiene una preferencia guardada
+const savedMode = localStorage.getItem("darkMode");
+if(savedMode !== null) {
+  setTheme(savedMode === "true");
+} else {
+  // Si no hay preferencia guardada, detectar modo del sistema
+  const prefersDark = window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches;
+  setTheme(prefersDark);
+}
+
+// Cambiar modo al hacer click
+toggleButton.addEventListener("click", () => {
+  const isDark = document.documentElement.classList.contains("dark-mode");
+  setTheme(!isDark);
+});
+
 </script>
 
 

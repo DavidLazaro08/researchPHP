@@ -7,12 +7,7 @@
   box-sizing: border-box;
   color: var(--color-text);
 }
-.divider {
-  height: 2px;
-  background: var(--color-divider);
-  margin: 20px 0;
-  border-radius: 1px;
-}
+
 
 
 html, body {
@@ -419,8 +414,9 @@ code {
 
 /* --- AJUSTES ESTÉTICOS GENERALES --- */
 main {
-  max-width: 1100px;
-  margin: 0 auto;
+  padding-left: 20%;
+  padding-right: 20%;
+
 }
 
 /* Justificación general */
@@ -435,7 +431,7 @@ main ul {
 
 /* Contenido más equilibrado */
 main > * {
-  max-width: 950px;
+  max-width: 1050px;
   margin-left: auto;
   margin-right: auto;
 }
@@ -444,7 +440,7 @@ main > * {
 main table {
   width: 100%;
   border-collapse: collapse;
-  margin: 20px 0;
+  
   background: #fff;
   border-radius: 8px;
   overflow: hidden;
@@ -591,4 +587,12 @@ main tr:hover {
 
 footer, footer * {
   color: var(--color-footer-text) !important;
+}
+
+
+.divider {
+  height: 2px;
+  background: var(--color-divider);
+  margin: 20px 20%;
+  border-radius: 1px;
 }
